@@ -1,6 +1,6 @@
 <?php 
 try {
-$conn = new PDO('mysql:host=localhost;dbname=db_aduanefieonboard','Gabby','gabbyinchrist',array(
+$conn = new PDO('mysql:host=localhost;dbname=db_aduanefieonboard','root','',array(
 PDO::ATTR_PERSISTENT => TRUE));
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } 

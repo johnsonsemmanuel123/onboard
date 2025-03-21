@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 02, 2025 at 11:59 PM
+-- Generation Time: Mar 21, 2025 at 02:06 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -58,6 +58,18 @@ CREATE TABLE `login_attempts` (
   `lastlogin` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `login_attempts`
+--
+
+INSERT INTO `login_attempts` (`id`, `email`, `address`, `timestamp`, `lastlogin`) VALUES
+(1, 'gaduanefie@gmail.com', '127.0.0.1', '2025-03-13 22:16:14', '2025-03-13 22:16:14'),
+(2, 'gaduanefie@gmail.com', '127.0.0.1', '2025-03-13 22:21:55', '2025-03-13 22:21:55'),
+(3, 'baduanefie@gmail.com', '127.0.0.1', '2025-03-13 22:23:04', '2025-03-13 22:23:04'),
+(4, 'gaduanefie@gmail.com', '127.0.0.1', '2025-03-20 12:05:40', '2025-03-20 12:05:40'),
+(5, 'aduanefie@gmail.com', '127.0.0.1', '2025-03-21 09:46:48', '2025-03-21 09:46:48'),
+(6, 'rm@gmail.com', '127.0.0.1', '2025-03-21 09:57:08', '2025-03-21 09:57:08');
+
 -- --------------------------------------------------------
 
 --
@@ -71,6 +83,18 @@ CREATE TABLE `tbl_audittrail` (
   `date_time` timestamp NOT NULL DEFAULT current_timestamp(),
   `user` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `tbl_audittrail`
+--
+
+INSERT INTO `tbl_audittrail` (`id`, `activity`, `details`, `date_time`, `user`) VALUES
+(1, 'Successful Login', 'User Successfully Logged Into The System', '2025-03-13 22:16:14', 'Mirabelle Elinam'),
+(2, 'Successful Login', 'User Successfully Logged Into The System', '2025-03-13 22:21:55', 'Mirabelle Elinam'),
+(3, 'Successful Login', 'User Successfully Logged Into The System', '2025-03-13 22:23:04', 'Christopher Klutse'),
+(4, 'Successful Login', 'User Successfully Logged Into The System', '2025-03-20 12:05:40', 'Mirabelle Elinam'),
+(5, 'Successful Login', 'User Successfully Logged Into The System', '2025-03-21 09:46:48', 'Johnson Excellent-Emmanuel'),
+(6, 'Successful Login', 'User Successfully Logged Into The System', '2025-03-21 09:57:08', 'Gilbert Amoa');
 
 -- --------------------------------------------------------
 
@@ -90,8 +114,80 @@ CREATE TABLE `tbl_cropsgrowned` (
 --
 
 INSERT INTO `tbl_cropsgrowned` (`id`, `crop_name`, `description`, `date_time`) VALUES
-(1, 'Maize', 'Maize Crop', '2025-03-02 21:48:02'),
-(2, 'Beans', 'Legumes', '2025-03-02 21:48:02');
+(1, 'Maize', 'Maize', '0000-00-00 00:00:00'),
+(2, 'Rice', 'Rice', '0000-00-00 00:00:00'),
+(3, 'Cassava', 'Cassava', '0000-00-00 00:00:00'),
+(4, 'Yam', 'Yam', '0000-00-00 00:00:00'),
+(5, 'Plantain', 'Plantain', '0000-00-00 00:00:00'),
+(6, 'Cocoyam (Taro)', 'Cocoyam (Taro)', '0000-00-00 00:00:00'),
+(7, 'Sweet Potatoes', 'Sweet Potatoes', '0000-00-00 00:00:00'),
+(8, 'Sorghum', 'Sorghum', '0000-00-00 00:00:00'),
+(9, 'Millet', 'Millet', '0000-00-00 00:00:00'),
+(10, 'Fonio (Acha)', 'Fonio (Acha)', '0000-00-00 00:00:00'),
+(11, 'Cocoa', 'Cocoa', '0000-00-00 00:00:00'),
+(12, 'Oil Palm', 'Oil Palm', '0000-00-00 00:00:00'),
+(13, 'Rubber', 'Rubber', '0000-00-00 00:00:00'),
+(14, 'Shea Nuts', 'Shea Nuts', '0000-00-00 00:00:00'),
+(15, 'Cashew Nuts', 'Cashew Nuts', '0000-00-00 00:00:00'),
+(16, 'Cotton', 'Cotton', '0000-00-00 00:00:00'),
+(17, 'Coffee', 'Coffee', '0000-00-00 00:00:00'),
+(18, 'Tobacco', 'Tobacco', '0000-00-00 00:00:00'),
+(20, 'Tomatoes', 'Tomatoes', '0000-00-00 00:00:00'),
+(21, 'Onions', 'Onions', '0000-00-00 00:00:00'),
+(22, 'Pepper', 'Pepper', '0000-00-00 00:00:00'),
+(23, 'Garden Eggs', 'Garden Eggs', '0000-00-00 00:00:00'),
+(24, 'Okra', 'Okra', '0000-00-00 00:00:00'),
+(25, 'Carrots', 'Carrots', '0000-00-00 00:00:00'),
+(26, 'Lettuce', 'Lettuce', '0000-00-00 00:00:00'),
+(27, 'Cabbage', 'Cabbage', '0000-00-00 00:00:00'),
+(28, 'Spinach', 'Spinach', '0000-00-00 00:00:00'),
+(29, 'Green Beans', 'Green Beans', '0000-00-00 00:00:00'),
+(30, 'Cucumber', 'Cucumber', '0000-00-00 00:00:00'),
+(31, 'Cowpea', 'Cowpea', '0000-00-00 00:00:00'),
+(32, 'Soybeans', 'Soybeans', '0000-00-00 00:00:00'),
+(33, 'Groundnuts (Peanuts)', 'Groundnuts (Peanuts)', '0000-00-00 00:00:00'),
+(34, 'Bambara Beans', 'Bambara Beans', '0000-00-00 00:00:00'),
+(35, 'Mango', 'Mango', '0000-00-00 00:00:00'),
+(36, 'Orange', 'Orange', '0000-00-00 00:00:00'),
+(37, 'Banana', 'Banana', '0000-00-00 00:00:00'),
+(38, 'Pineapple', 'Pineapple', '0000-00-00 00:00:00'),
+(39, 'Watermelon', 'Watermelon', '0000-00-00 00:00:00'),
+(40, 'Coconut', 'Coconut', '0000-00-00 00:00:00'),
+(41, 'Papaya (Pawpaw)', 'Papaya (Pawpaw)', '0000-00-00 00:00:00'),
+(42, 'Avocado', 'Avocado', '0000-00-00 00:00:00'),
+(43, 'Grapefruit', 'Grapefruit', '0000-00-00 00:00:00'),
+(44, 'Tangerines', 'Tangerines', '0000-00-00 00:00:00'),
+(45, 'Lemon & Lime', 'Lemon & Lime', '0000-00-00 00:00:00'),
+(46, 'Guava', 'Guava', '0000-00-00 00:00:00'),
+(47, 'Soursop', 'Soursop', '0000-00-00 00:00:00'),
+(48, 'Passion Fruit', 'Passion Fruit', '0000-00-00 00:00:00'),
+(49, 'Apples', 'Apples', '0000-00-00 00:00:00'),
+(50, 'Pomegranate (Rare)', 'Pomegranate (Rare)', '0000-00-00 00:00:00'),
+(51, 'Spices & Herbs', 'Spices & Herbs', '0000-00-00 00:00:00'),
+(52, 'Ginger', 'Ginger', '0000-00-00 00:00:00'),
+(53, 'Turmeric', 'Turmeric', '0000-00-00 00:00:00'),
+(54, 'Cloves', 'Cloves', '0000-00-00 00:00:00'),
+(55, 'Bay Leaves', 'Bay Leaves', '0000-00-00 00:00:00'),
+(56, 'African Nutmeg', 'African Nutmeg', '0000-00-00 00:00:00'),
+(57, 'Dawadawa', 'Dawadawa', '0000-00-00 00:00:00'),
+(58, 'Basil (Akuko Besa)', 'Basil (Akuko Besa)', '0000-00-00 00:00:00'),
+(59, 'Rosemary', 'Rosemary', '0000-00-00 00:00:00'),
+(60, 'Mint', 'Mint', '0000-00-00 00:00:00'),
+(61, 'Thyme', 'Thyme', '0000-00-00 00:00:00'),
+(62, 'Lemongrass', 'Lemongrass', '0000-00-00 00:00:00'),
+(63, 'Vanilla', 'Vanilla', '0000-00-00 00:00:00'),
+(64, 'Strawberries', 'Strawberries', '0000-00-00 00:00:00'),
+(65, 'Dragon Fruit', 'Dragon Fruit', '0000-00-00 00:00:00'),
+(66, 'Macadamia Nuts', 'Macadamia Nuts', '0000-00-00 00:00:00'),
+(67, 'Almonds', 'Almonds', '0000-00-00 00:00:00'),
+(68, 'Chia Seeds', 'Chia Seeds', '0000-00-00 00:00:00'),
+(69, 'Quinoa', 'Quinoa', '0000-00-00 00:00:00'),
+(70, 'Blueberries', 'Blueberries', '0000-00-00 00:00:00'),
+(71, 'Date Palm', 'Date Palm', '0000-00-00 00:00:00'),
+(72, 'Teak', 'Teak', '0000-00-00 00:00:00'),
+(73, 'Mahogany', 'Mahogany', '0000-00-00 00:00:00'),
+(74, 'Neem Tree', 'Neem Tree', '0000-00-00 00:00:00'),
+(75, 'Moringa', 'Moringa', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -390,6 +486,40 @@ INSERT INTO `tbl_districts` (`id`, `district_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_growersdata`
+--
+
+CREATE TABLE `tbl_growersdata` (
+  `id` bigint(20) NOT NULL,
+  `pix` varchar(100) DEFAULT NULL,
+  `first_name` varchar(100) DEFAULT NULL,
+  `surname` varchar(100) DEFAULT NULL,
+  `other_names` varchar(100) DEFAULT NULL,
+  `ghana_card` varchar(50) DEFAULT NULL,
+  `phone_number` varchar(20) DEFAULT NULL,
+  `email_address` varchar(100) DEFAULT NULL,
+  `farm_region` varchar(100) DEFAULT NULL,
+  `farm_district` varchar(100) DEFAULT NULL,
+  `crop_detail` varchar(250) NOT NULL,
+  `payment_method` varchar(100) DEFAULT NULL,
+  `assistant` varchar(10) DEFAULT NULL,
+  `assistant_details` text DEFAULT NULL,
+  `date_time` datetime NOT NULL DEFAULT current_timestamp(),
+  `marketer_id` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_growersdata`
+--
+
+INSERT INTO `tbl_growersdata` (`id`, `pix`, `first_name`, `surname`, `other_names`, `ghana_card`, `phone_number`, `email_address`, `farm_region`, `farm_district`, `crop_detail`, `payment_method`, `assistant`, `assistant_details`, `date_time`, `marketer_id`) VALUES
+(1, '0', 'Gabriel', 'Duon-naah', '', 'GHA-12343243', '0248383212', 'naahgabby1@gmail.com', '10', '220', '220', 'MOMO_GH', 'YES', 'Help nedd', '2025-03-21 10:48:25', 'Gilbert Amoa'),
+(2, 'pixx.jpeg', 'Muniru', 'Acquah', '', 'GHA-12324-14524', '025651442', 'naahgabby1@gmail.com', 'Greater Accra', 'Accra Metropolitan', 'Tomatoes', 'MOMO_GH', 'NO', '', '2025-03-21 11:10:53', 'rm@gmail.com'),
+(3, '645c3e59-cc2f-473c-96f4-96e24873997b.jpeg', 'Daniella', 'Akuffo Addo', '', 'GHA-234234', '0266025932', 'naahgabby1@gmail.com', 'Northern', 'Adentan Municipal', 'Cloves', 'MOMO_GH', 'YES', 'Financial Assistant', '2025-03-21 12:24:12', 'rm@gmail.com');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_organization`
 --
 
@@ -460,7 +590,33 @@ CREATE TABLE `tbl_roles` (
 INSERT INTO `tbl_roles` (`id`, `user_role`, `status`) VALUES
 (1, 'Admin', 1),
 (2, 'Grower', 1),
-(3, 'Buyer', 1);
+(3, 'Buyer', 1),
+(4, 'Remote Marketer', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_thisyearfarmers`
+--
+
+CREATE TABLE `tbl_thisyearfarmers` (
+  `id` bigint(20) NOT NULL,
+  `farmer_id` varchar(25) DEFAULT NULL,
+  `location` varchar(100) DEFAULT NULL,
+  `farm_size` double DEFAULT NULL,
+  `crop` varchar(100) DEFAULT NULL,
+  `date_time` datetime NOT NULL DEFAULT current_timestamp(),
+  `registered_by` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_thisyearfarmers`
+--
+
+INSERT INTO `tbl_thisyearfarmers` (`id`, `farmer_id`, `location`, `farm_size`, `crop`, `date_time`, `registered_by`) VALUES
+(1, '2', 'Adenta', 100, 'Cassava', '2025-03-21 12:21:16', 'rm@gmail.com'),
+(2, '2', 'Dodowa', 20, 'Cashew Nuts', '2025-03-21 12:22:40', 'rm@gmail.com'),
+(3, '3', 'Accra', 12, 'Basil (Akuko Besa)', '2025-03-21 12:24:37', 'rm@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -489,9 +645,10 @@ CREATE TABLE `tbl_users` (
 --
 
 INSERT INTO `tbl_users` (`id`, `email`, `country`, `first_name`, `last_name`, `phone_number`, `password`, `user_role`, `date_created`, `status`, `update_permission`, `delete_permission`, `organization`) VALUES
-(1, 'aduanefie@gmail.com', 'Ghana', 'Johnson', 'Excellent-Emmanuel', '0242371341', '827ccb0eea8a706c4c34a16891f84e7b', 2, '2023-03-02 16:03:29', 1, 1, 1, '1'),
-(2, 'gaduanefie@gmail.com', 'Ghana', 'Mirabelle', 'Elinam', '0248383212', '827ccb0eea8a706c4c34a16891f84e7b', 3, '2025-03-01 16:03:59', 1, 0, 0, '1'),
-(3, 'baduanefie@gmail.com', 'Ghana', 'Christopher', 'Klutse', '0266025932', '827ccb0eea8a706c4c34a16891f84e7b', 2, '2025-03-02 22:25:01', 1, 0, 0, '1');
+(1, 'aduanefie@gmail.com', 'Ghana', 'Johnson', 'Excellent-Emmanuel', '0242371341', '827ccb0eea8a706c4c34a16891f84e7b', 1, '2023-03-02 16:03:29', 1, 1, 1, '1'),
+(2, 'gaduanefie@gmail.com', 'Ghana', 'Mirabelle', 'Elinam', '0248383212', '827ccb0eea8a706c4c34a16891f84e7b', 2, '2025-03-01 16:03:59', 1, 0, 0, '1'),
+(3, 'baduanefie@gmail.com', 'Ghana', 'Christopher', 'Klutse', '0266025932', '827ccb0eea8a706c4c34a16891f84e7b', 3, '2025-03-02 22:25:01', 1, 0, 0, '1'),
+(4, 'rm@gmail.com', 'Ghana', 'Gilbert', 'Amoa', '0266025932', '827ccb0eea8a706c4c34a16891f84e7b', 4, '2025-03-02 22:25:01', 1, 0, 0, '1');
 
 -- --------------------------------------------------------
 
@@ -500,7 +657,7 @@ INSERT INTO `tbl_users` (`id`, `email`, `country`, `first_name`, `last_name`, `p
 --
 DROP TABLE IF EXISTS `logindetails`;
 
-CREATE VIEW `logindetails`  AS SELECT `tbl_users`.`id` AS `id`, `tbl_users`.`email` AS `email`, `tbl_users`.`first_name` AS `first_name`, `tbl_users`.`last_name` AS `last_name`, `tbl_users`.`phone_number` AS `phone_number`, `tbl_users`.`password` AS `password`, `tbl_users`.`user_role` AS `user_id`, `tbl_roles`.`user_role` AS `user_role`, `tbl_users`.`date_created` AS `date_created`, `tbl_users`.`status` AS `status`, `tbl_organization`.`name` AS `organization`, `tbl_organization`.`image` AS `aduanefie_image`, `tbl_users`.`update_permission` AS `update_permission`, `tbl_users`.`delete_permission` AS `delete_permission` FROM ((`tbl_users` join `tbl_roles` on(`tbl_users`.`user_role` = `tbl_roles`.`id`)) join `tbl_organization` on(`tbl_users`.`organization` = `tbl_organization`.`id`)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`Gabby`@`%` SQL SECURITY DEFINER VIEW `logindetails`  AS SELECT `tbl_users`.`id` AS `id`, `tbl_users`.`email` AS `email`, `tbl_users`.`first_name` AS `first_name`, `tbl_users`.`last_name` AS `last_name`, `tbl_users`.`phone_number` AS `phone_number`, `tbl_users`.`password` AS `password`, `tbl_users`.`user_role` AS `user_id`, `tbl_roles`.`user_role` AS `user_role`, `tbl_users`.`date_created` AS `date_created`, `tbl_users`.`status` AS `status`, `tbl_organization`.`name` AS `organization`, `tbl_organization`.`image` AS `aduanefie_image`, `tbl_users`.`update_permission` AS `update_permission`, `tbl_users`.`delete_permission` AS `delete_permission` FROM ((`tbl_users` join `tbl_roles` on(`tbl_users`.`user_role` = `tbl_roles`.`id`)) join `tbl_organization` on(`tbl_users`.`organization` = `tbl_organization`.`id`)) ;
 
 --
 -- Indexes for dumped tables
@@ -537,6 +694,13 @@ ALTER TABLE `tbl_districts`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tbl_growersdata`
+--
+ALTER TABLE `tbl_growersdata`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `marketer_id` (`marketer_id`);
+
+--
 -- Indexes for table `tbl_organization`
 --
 ALTER TABLE `tbl_organization`
@@ -553,6 +717,13 @@ ALTER TABLE `tbl_regions`
 --
 ALTER TABLE `tbl_roles`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_thisyearfarmers`
+--
+ALTER TABLE `tbl_thisyearfarmers`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `farmer_id` (`farmer_id`);
 
 --
 -- Indexes for table `tbl_users`
@@ -572,25 +743,31 @@ ALTER TABLE `tbl_users`
 -- AUTO_INCREMENT for table `login_attempts`
 --
 ALTER TABLE `login_attempts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tbl_audittrail`
 --
 ALTER TABLE `tbl_audittrail`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tbl_cropsgrowned`
 --
 ALTER TABLE `tbl_cropsgrowned`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT for table `tbl_customers`
 --
 ALTER TABLE `tbl_customers`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_growersdata`
+--
+ALTER TABLE `tbl_growersdata`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_organization`
@@ -608,13 +785,19 @@ ALTER TABLE `tbl_regions`
 -- AUTO_INCREMENT for table `tbl_roles`
 --
 ALTER TABLE `tbl_roles`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `tbl_thisyearfarmers`
+--
+ALTER TABLE `tbl_thisyearfarmers`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_users`
 --
 ALTER TABLE `tbl_users`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

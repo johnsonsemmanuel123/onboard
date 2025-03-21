@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>ONBOARD | ADUANEFIE</title>
+<title>Buyer Onboarding | Aduanwfie Marketplace</title>
 <link rel="shortcut icon" type="image/x-icon" href="../assets/images/logo.jpg">
 <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
 <link rel="stylesheet" href="../assets/plugins/fontawesome/css/fontawesome.min.css">

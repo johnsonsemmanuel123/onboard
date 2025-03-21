@@ -58,7 +58,7 @@
 <div class="col-lg-4 col-sm-6 col-12">
 <div class="form-group">
 <label>Email Address</label>
-<input type="email" name="email_address">
+<input type="email" class="form-control" name="email_address">
 </div>
 </div>
 
@@ -141,7 +141,7 @@ foreach ($rowdata as $data) { ?>
 </div>
 <div class="col-lg-12">
 <input type="submit" class="btn btn-submit me-2" id="submitStockEntry" name="submitStockEntry" value="Submit">
-<a href="index.php?page=productbatch" class="btn btn-cancel">Cancel</a>
+<a href="index.php?page=registeredgrowerslist" class="btn btn-cancel">Cancel</a>
 </div>
 </div>
 </form>

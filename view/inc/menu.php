@@ -5,5 +5,7 @@ if ($role==1) {
 @include('menu/growers.php');
 }else if ($role==3) {
 @include('menu/buyers.php');
+}else if ($role==4) {
+@include('menu/rm.php');
 }
 ?>

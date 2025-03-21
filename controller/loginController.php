@@ -14,8 +14,10 @@ if (isset($loginBtn)){
 $groupType = mysqli_real_escape_string($conn, $category);
 if ($groupType==1) {
 $pagedirection='buyer';
-}else{
+}else if($groupType==2){
 $pagedirection='grower';	
+}else{
+$pagedirection='admin';	
 }
 
 

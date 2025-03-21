@@ -291,9 +291,9 @@ return $data;
 }
 
 
-public function fetch_customer($id) {
+public function fetch_farmer($id) {
 $data = '';
-$sql = "SELECT `customer_name` FROM sales_centralstores Where `transaction_code`='".$id."'";
+$sql = "SELECT CONCAT(`first_name`,' ',`other_names`,' ',`surname`) as customer_name FROM tbl_growersdata Where `id`='".$id."'";
 $xconx = $this->conx();
 $results = mysqli_query($xconx, $sql);
 $count = mysqli_num_rows ($results);
@@ -369,9 +369,10 @@ return $data;
 }
 
 
-public function cred_payments($id) {
+public function farmer_thisyearsize($id) {
 $data = '';
-$sql = "SELECT SUM(`amount_paid`) as ncountx FROM tbl_creditpayments Where `transaction_code`='".$id."'";
+$thisyear=date('Y');
+$sql = "SELECT SUM(`farm_size`) as ncountx FROM tbl_thisyearfarmers Where `farmer_id`='".$id."' AND YEAR(`date_time`)='".$thisyear."'";
 $xconx = $this->conx();
 $results = mysqli_query($xconx, $sql);
 $count = mysqli_num_rows ($results);
@@ -517,9 +518,44 @@ return $data;
 
 
 
-public function central_saleslist_today() {
+public function central_thisyearlist($id) {
 $data = array();
-$sql = "SELECT `payment_category`, `transaction_code`, `customer_name`, `customer_phone`, SUM(`quantity`) as qty, SUM(`total_sprice`) as total_monies, `user_name`, `date_time` FROM sales_centralstores WHERE curdate() = cast(`db_suitzshop`.`sales_centralstores`.`date_time` as date) GROUP BY `transaction_code`";
+$sql = "SELECT * FROM tbl_thisyearfarmers WHERE `farmer_id`='".$id."'";
+
+$xconx = $this->conx();
+$results = mysqli_query($xconx, $sql);
+$count = mysqli_num_rows ($results);
+if ($count > 0) {
+while ($r = mysqli_fetch_assoc($results)) {
+$data[] = $r;
+}
+return $data;
+}
+}
+
+
+
+public function sum_count_summaries($id) {
+$data = array();
+$sql = "SELECT COUNT(`id`) as idcount, sum(`farm_size`) sumacres FROM tbl_thisyearfarmers WHERE `registered_by`='".$id."'";
+
+$xconx = $this->conx();
+$results = mysqli_query($xconx, $sql);
+$count = mysqli_num_rows ($results);
+if ($count > 0) {
+while ($r = mysqli_fetch_assoc($results)) {
+$data[] = $r;
+}
+return $data;
+}
+}
+
+
+
+
+public function myregistered_farmers($id) {
+$data = array();
+$sql = "SELECT * FROM tbl_growersdata WHERE `marketer_id`='".$id."' ORDER BY `first_name` ASC";
 
 $xconx = $this->conx();
 $results = mysqli_query($xconx, $sql);
@@ -740,6 +776,22 @@ return $data;
 }
 }
 
+
+
+
+public function select_allcrops() {
+$data = array();
+$sql = "SELECT * FROM tbl_cropsgrowned Where 1 ORDER BY `crop_name` ASC";
+$xconx = $this->conx();
+$results = mysqli_query($xconx, $sql);
+$count = mysqli_num_rows ($results);
+if ($count > 0) {
+while ($r = mysqli_fetch_assoc($results)) {
+$data[] = $r;
+}
+return $data;
+}
+}
 
 public function select_alldistricts() {
 $data = array();

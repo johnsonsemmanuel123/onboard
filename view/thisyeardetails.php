@@ -1,16 +1,16 @@
 <?php 
 $xcod = $_GET['idcode'];
-$selected_todaysales = $context->central_paymentlist($xcod,$oshop_code); ?>
+$selected_todaysales = $context->central_thisyearlist($xcod); ?>
 
 <div class="page-wrapper">
 <div class="content">
 <div class="page-header">
 <div class="page-title">
-<h4>Credit Payment</h4>
-<h6>Manage your credit sale payments</h6>
+<h4>Details This Year</h4>
+<h6>Manage Your Registered Grower Details For This Year</h6>
 </div>
 <div class="page-btn">
-<a href="index.php?page=saleslist" class="btn btn-added"><img src="../assets/img/icons/plus.svg" alt="img" class="me-1">Sales Ledger</a>
+<a href="index.php?page=registeredgrowerslist" class="btn btn-added"><img src="../assets/img/icons/plus.svg" alt="img" class="me-1">Return</a>
 </div>
 </div>
 <div class="card">
@@ -27,28 +27,13 @@ $selected_todaysales = $context->central_paymentlist($xcod,$oshop_code); ?>
 <a class="btn btn-searchset"><img src="../assets/img/icons/search-white.svg" alt="img"></a>
 </div>
 </div>
-<div class="wordset">
-<ul>
-<li>
-<a data-bs-toggle="tooltip" data-bs-placement="top" title="pdf">
-<img src="../assets/img/icons/pdf.svg" alt="img">
-</a>
-</li>
-<li>
-<a data-bs-toggle="tooltip" data-bs-placement="top" title="excel"><img src="../assets/img/icons/excel.svg" alt="img"></a>
-</li>
-<li>
-<a data-bs-toggle="tooltip" data-bs-placement="top" title="print"><img src="../assets/img/icons/printer.svg" alt="img"></a>
-</li>
-</ul>
-</div>
 </div>
 <div class="card" id="filter_inputs">
 <div class="card-body pb-0">
 <div class="row">
 <div class="col-12">
 <div class="form-group">
-<input type="text" class="form-control" value="List of all sales today <?php echo date('d-M-Y'); ?> and pending payment list" readonly style="border-radius: 0px; border: 1px solid #ff9f43;">
+<input type="text" class="form-control" value="Detail Of Registered Grower" readonly style="border-radius: 0px; border: 1px solid #ff9f43;">
 </div>
 </div>
 </div>
@@ -66,15 +51,16 @@ $selected_todaysales = $context->central_paymentlist($xcod,$oshop_code); ?>
 </label>
 </th>
 <th>Date</th>
-<th>Customer Name</th>
-<th>Amount</th>
-<th>Amount Received By</th>
+<th>Grower Name</th>
+<th>Farm Location</th>
+<th>Farm Size</th>
+<th>Crop</th>
 </tr>
 </thead>
 <tbody>
 <?php 
 if (!empty($selected_todaysales)) {
-foreach ($selected_todaysales as $data) { $id = $data['transaction_code'];?>
+foreach ($selected_todaysales as $data) { $id = $data['farmer_id'];?>
 <tr>
 <td>
 <label class="checkboxs">
@@ -83,12 +69,13 @@ foreach ($selected_todaysales as $data) { $id = $data['transaction_code'];?>
 </label>
 </td>
 <td><?php echo $data['date_time']; ?></td>
-<td><?php echo ucwords(strtolower($context->fetch_customer($id))); ?></td>
-<td align="right"><?php echo number_format($data['amount_paid'],2); ?></td>
-<td><?php echo ucwords(strtolower($data['username'])); ?></td>
+<td><?php echo ucwords(strtolower($context->fetch_farmer($id))); ?></td>
+<td><?php echo ucwords(strtolower($data['location'])); ?></td>
+<td align="right"><?php echo number_format($data['farm_size'],2); ?></td>
+<td><?php echo ucwords(strtolower($data['crop'])); ?></td>
 </tr>
 <?php 
-$total += $data['amount_paid'];
+$total += $data['farm_size'];
 }
 }
 ?>
@@ -96,10 +83,10 @@ $total += $data['amount_paid'];
 <tr>
 <td colspan="2"></td>
 <td style="background: #f5f5f5; border: 2px solid green; color: green; font-weight: bold;">
-<b>TOTAL</b>
+<b>TOTAL FARM SIZE THIS YEAR</b>
 </td>
 <td align="right" style="background: #f5f5f5; border: 2px solid green; color: green; font-weight: bold;">
-GH¢ <?php echo number_format($total,2); ?></td>
+ACRES <?php echo number_format($total,2); ?></td>
 </tr>
 </tfoot>
 </tbody>

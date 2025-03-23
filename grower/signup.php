@@ -94,11 +94,25 @@
                         <h4><?php echo date('d-M-Y'); ?></h4>
                     </div>
 
-                    <!-- Motivational Message -->
-                    <div class="motivation-text" style="margin-top: 30px; text-align: center; font-weight: bold; font-size: 18px; color: inherit;">
-                        🌱 *Farming is the foundation of life!*  
-                        "Every seed you plant today is a harvest for tomorrow. Stay strong, stay dedicated, and watch your farm grow!" 🚜💚  
+                    <!-- Sliding Motivational Quotes -->
+                    <div class="motivational-quotes" style="margin-top: 30px; text-align: center; font-size: 16px; font-style: italic; color: inherit; height: 40px; overflow: hidden; position: relative;">
+                        <p class="quote active" style="opacity: 1; transition: opacity 1s;">
+                            "Farming is not just a job; it’s a mission to feed the world."
+                        </p>
+                        <p class="quote" style="opacity: 0; position: absolute; top: 0; transition: opacity 1s;">
+                            "Your hands may be in the soil, but your impact is in the world."
+                        </p>
+                        <p class="quote" style="opacity: 0; position: absolute; top: 0; transition: opacity 1s;">
+                            "A farmer’s work is never done, but the rewards are endless."
+                        </p>
+                        <p class="quote" style="opacity: 0; position: absolute; top: 0; transition: opacity 1s;">
+                            "Every seed you plant is a promise for a better tomorrow."
+                        </p>
+                        <p class="quote" style="opacity: 0; position: absolute; top: 0; transition: opacity 1s;">
+                            "Your farm is not just a business; it’s a legacy of nourishment."
+                        </p>
                     </div>
+
                 </div>
             </div>
 
@@ -109,3 +123,20 @@
         </div>
     </div>
 </div>
+
+<!-- JavaScript for Sliding Quotes -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let quotes = document.querySelectorAll(".motivational-quotes .quote");
+        let index = 0;
+
+        function showNextQuote() {
+            quotes.forEach((q, i) => {
+                q.style.opacity = i === index ? "1" : "0";
+            });
+            index = (index + 1) % quotes.length;
+        }
+
+        setInterval(showNextQuote, 5000);
+    });
+</script>

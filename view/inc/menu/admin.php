@@ -5,7 +5,7 @@
 <li class="active">
 <a href="index.php?page=dashboard"><img src="../assets/img/icons/dashboard.svg" alt="img"><span> Dashboard</span> </a>
 </li>
-<li class="submenu">
+<!-- <li class="submenu">
 <a href="#">
 <img src="../assets/img/icons/product.svg" alt="img"><span>Item Category</span> <span class="menu-arrow"></span></a>
 <ul>
@@ -13,30 +13,25 @@
 <li><a href="index.php?page=sub2">sub 2</a></li>
 <li><a href="index.php?page=sub3">sub 3</a></li>
 </ul>
-</li>
-<li class="submenu">
+</li> -->
+<!-- <li class="submenu">
 <a href="javascript:void(0);"><img src="../assets/img/icons/sales1.svg" alt="img"><span> Category 2</span> <span class="menu-arrow"></span></a>
 <ul>
 <li><a href="index.php?page=sub4">sub 4</a></li>
-<!-- <li><a href="index.php?page=creditsales">Credited Sales</a></li>
-<li><a href="index.php?page=layawaysales">Layaway Sales</a></li>
-<li><a href="index.php?page=newsales">Cash-&-Credit Sales</a></li> -->
 </ul>
-</li>
-<li class="submenu">
+</li> -->
+<!-- <li class="submenu">
 <a href="javascript:void(0);"><img src="../assets/img/icons/expense1.svg" alt="img"><span> Category 3</span> <span class="menu-arrow"></span></a>
 <ul>
 <li><a href="index.php?page=sub5">sub 5</a></li>
-<!-- <li><a href="index.php?page=createexpense">Add Expense</a></li> -->
 </ul>
-</li>
-<li class="submenu">
+</li> -->
+<!-- <li class="submenu">
 <a href="javascript:void(0);"><img src="../assets/img/icons/purchase1.svg" alt="img"><span> Category 4</span> <span class="menu-arrow"></span></a>
 <ul>
 <li><a href="index.php?page=sub6">Expenses List</a></li>
-<!-- <li><a href="index.php?page=createexpense">Add Expense</a></li> -->
 </ul>
-</li>
+</li> -->
 <li class="submenu">
 <a href="javascript:void(0);"><img src="../assets/img/icons/time.svg" alt="img"><span> Report</span> <span class="menu-arrow"></span></a>
 <ul>

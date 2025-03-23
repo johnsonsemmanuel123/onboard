@@ -9,6 +9,7 @@
                     <div class="login-userheading">
                         <h3>Buyer Sign Up</h3>
                         <h4>Please sign up as a <strong>corporate buyer</strong></h4>
+                        <p class="motivation">Your purchases empower farmers and strengthen the agricultural supply chain!</p>
                     </div>
 
                     <form method="POST" action="../controller/signupController.php">
@@ -38,30 +39,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-sm-6 col-12">
-                                    <div class="form-login">
-                                        <label>Industry Type <span style="color: red">*</span></label>
-                                        <div class="form-addons">
-                                            <select name="industry" required>
-                                                <option value="">Select Industry</option>
-                                                <option value="Agriculture">Agriculture</option>
-                                                <option value="Restaurant & Catering">Restaurant & Catering</option>
-                                                <option value="Hotels & Hospitality">Hotels & Hospitality</option>
-                                                <option value="Supermarkets & Grocery Stores">Supermarkets & Grocery Stores</option>
-                                                <option value="Pharmaceuticals">Pharmaceuticals</option>
-                                                <option value="Cosmetics & Beauty Products">Cosmetics & Beauty Products</option>
-                                                <option value="Animal Feed Production">Animal Feed Production</option>
-                                                <option value="Food Processing">Food Processing</option>
-                                                <option value="Retail">Retail</option>
-                                                <option value="Beverage & Brewing Industry">Beverage & Brewing Industry</option>
-                                                <option value="Biofuel & Energy">Biofuel & Energy</option>
-                                                <option value="Export & Import">Export & Import</option>
-                                                <option value="Wholesale">Wholesale</option>
-                                                <option value="Other">Other</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
 
                             <div class="form-login">
@@ -72,20 +49,11 @@
                         <!-- PAGE 2: Contact Person Details & Password -->
                         <div id="page2" style="display: none;">
                             <div class="row">
-                                <div class="col-lg-6 col-sm-6 col-12">
+                                <div class="col-12">
                                     <div class="form-login">
-                                        <label>Contact Person First Name <span style="color: red">*</span></label>
+                                        <label>Full Name <span style="color: red">*</span></label>
                                         <div class="form-addons">
-                                            <input type="text" name="firstname" placeholder="Enter First Name" required>
-                                            <img src="../assets/img/icons/users1.svg" alt="User Icon">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-sm-6 col-12">
-                                    <div class="form-login">
-                                        <label>Contact Person Other Names <span style="color: red">*</span></label>
-                                        <div class="form-addons">
-                                            <input type="text" name="othernames" placeholder="Enter Other Names" required>
+                                            <input type="text" name="fullname" placeholder="Enter Full Name" required>
                                             <img src="../assets/img/icons/users1.svg" alt="User Icon">
                                         </div>
                                     </div>

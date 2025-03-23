@@ -5,5 +5,7 @@ if ($role==1) {
 @include('dashboard/growers.php');
 }else if ($role==3) {
 @include('dashboard/buyers.php');
+}else if ($role==4) {
+@include('dashboard/rm.php');
 }
 ?>
